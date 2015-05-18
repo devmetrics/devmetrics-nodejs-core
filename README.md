@@ -1,7 +1,7 @@
 # devmetrics-nodejs-core
 NodeJS core lib for metrics and logs
 
-Simple log:
+###Simple log:
 require('devmetrics-core')().log('info', 'my text');
 
 App event:
