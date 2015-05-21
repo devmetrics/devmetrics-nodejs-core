@@ -3,13 +3,13 @@ NodeJS core lib for metrics and logs
 
 ####Basic level
 
-**Simple log:**
+**Simple log**
 
 `require('devmetrics-core')().log(level, text);`
 
 > Basic logging, for anything. Levels: trace, debug, info, warn, error
 
-**Exception:**
+**Exception**
 
 `require('devmetrics-core')().exception(e);`
 
@@ -18,7 +18,7 @@ NodeJS core lib for metrics and logs
 
 ####Domain level api
 
-**Web request:**
+**Web request**
 
 `require('devmetrics-core')().setContext(request, user_id = null);`
 > Set request context for all further events.
@@ -30,7 +30,7 @@ NodeJS core lib for metrics and logs
 > Measure total request time, call at the end of the request to get correct request time (if `setContext` was called at the beginning)
 
 
-**Storage request:**
+**Storage request**
 
 `require('devmetrics-core')().storageRequest(storageName, action, description, duration);`
 > Measure db requests, example:
@@ -40,7 +40,7 @@ NodeJS core lib for metrics and logs
 > `dbRequest('memcached', 'incr', 'mycounter', 12);`
 
 
-**External service request:**
+**External service request**
 
 `require('devmetrics-core')().externalRequest(serviceName, description, duration);`
 > Measure external services requests, example:
@@ -48,7 +48,7 @@ NodeJS core lib for metrics and logs
 > `externalRequest('fb.com', 'authorize', 239);`
 
 
-**System event:**
+**System event**
 
 `require('devmetrics-core')().systemEvent(description, extra = {});`
 > Application system events, not connected with business logic, like 'web_app_started', 'cron_script_X_started'
@@ -56,7 +56,7 @@ NodeJS core lib for metrics and logs
 > Use extra field to pass additional info
 
 
-**User event:**
+**User event**
 
 `require('devmetrics-core')().userEvent(description, extra = {});`
 
@@ -65,9 +65,17 @@ NodeJS core lib for metrics and logs
 > Use extra field to pass additional info
 
 
-**Frontend event:**
+**Frontend event**
 
 `require('devmetrics-core')().frontendEvent(description);`
 > User frontend actions from js, track user behaviour on the web page, just prepare an api callback.
 
 > Use https://github.com/devmetrics/devmetrics-js for frontend
+
+
+**Function wrapper**
+```
+var myFunc = function() {...};
+myFunc = require('devmetrics-core')().funcWrapper(myFunc);
+```
+> Measure function execution time. Wrap any function once before using it and check logs and graphs for function execution time.
