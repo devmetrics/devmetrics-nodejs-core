@@ -3,14 +3,17 @@ NodeJS core lib for metrics and logs
 
 ####Basic level
 
-####Simple log:
-require('devmetrics-core')().log('info', 'my text');
+**Simple log:**
 
-####App event:
-require('devmetrics-core')().event('info', 'started', {'thread_count': 10, 'some_param': 'some_value'});
+`require('devmetrics-core')().log(level, text);`
 
-####Exception:
-require('devmetrics-core')().exception(e);
+> Basic logging, for anything. Levels: trace, debug, info, warn, error
+
+**Exception:**
+
+`require('devmetrics-core')().exception(e);`
+
+> Add to exception handling sections to track application problems
 
 
 ####Domain level api
@@ -47,14 +50,19 @@ require('devmetrics-core')().exception(e);
 
 **System event:**
 
-`require('devmetrics-core')().systemEvent(description);`
+`require('devmetrics-core')().systemEvent(description, extra = {});`
 > Application system events, not connected with business logic, like 'web_app_started', 'cron_script_X_started'
+
+> Use extra field to pass additional info
 
 
 **User event:**
 
-`require('devmetrics-core')().userEvent(description);`
+`require('devmetrics-core')().userEvent(description, extra = {});`
+
 > User actions, track 'login', 'contact_form', 'purchase'
+
+> Use extra field to pass additional info
 
 
 **Frontend event:**
