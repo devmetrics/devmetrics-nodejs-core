@@ -38,8 +38,8 @@ var devmetrics = require('devmetrics-core')({
 ```
 All settings are optional:
 
-- `host` - Set to your private instance of logstash, if required. Defaults to `service.devmetrics.io`
-- `port` - Logstash port, defaults to 5545 for devmetrics.io cluster
+- `host` - Set to your private instance of logstash, if required, defaults to `service.devmetrics.io`
+- `port` - Logstash port, defaults to 5546 for devmetrics.io cluster
 - `app_id` - The unique app_id to filter your data and access dashboards, defaults to `os.hostname()`
 - `no_console` - Set to `true` for the silent mode (no stdout), defaults to `false`
 - `software_version` - Your app's version. Useful for continuous integration, defaults to ``
