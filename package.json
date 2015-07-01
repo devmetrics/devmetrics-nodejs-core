@@ -1,0 +1,36 @@
+{
+  "name": "devmetrics-core",
+  "version": "0.2.0",
+  "description": "Node.js monitoring solution. Fully open source. Logs, metrics, alerts, dashboards.",
+  "main": "devmetrics-core.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devmetrics/devmetrics-nodejs-core.git"
+  },
+  "keywords": [
+    "monitoring",
+    "analytics",
+    "logging",
+    "metrics",
+    "logs",
+    "exceptions",
+    "alerts",
+    "alerting",
+    "telemetry",
+    "dashboards"
+  ],
+  "author": "devmetrics.io <team@devmetrics.io> (http://devmetrics.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devmetrics/devmetrics-nodejs-core/issues"
+  },
+  "homepage": "http://devmetrics.io",
+  "dependencies": {
+    "winston": "latest",
+    "winston-logstash-udp": "latest",
+    "extend": "latest"
+  }
+}
