@@ -75,7 +75,7 @@ devmetrics.exception(e);
  * @param user_id optional, User unique identifier, used only for log
  * @param event_tags optional, Additional info, metric dimensions, string or array
  */
-devmetrics.userEvent('puchase_button_click', 123, ['android', 'US']);
+devmetrics.userEvent('purchase_button_click', 123, ['android', 'US']);
 devmetrics.userEvent('login', 89321);
 ```
 
