@@ -18,6 +18,8 @@ Our lib api design relies on several principles:
 2. If you write metrics, you often need a log with more details for this event. It's often called sampling and used for drilldown and debug. We provide options to control sampling rate.
 3. App events and user events are different types of data. It answers different questions for different people. For this reason at lib level we provide two separate api methods: `userEvent(...)` and `appEvent(...)`
 
+Checkout chat with out development team for comments and questions: https://gitter.im/devmetrics/dev#
+
 ####Installation
 
 ``` bash
@@ -105,10 +107,10 @@ devmetrics.appEvent('web-request', ['index-page', 'US_region']);
 ####Out of the box instrumentation, Application Performance Monitoring
 
 For MEAN stack we've prepared easy-to-go methods for APM instrumentation:
-devmetrics.enableHttpLogger(app);
 ``` js
-                        | devmetrics.enableMongooseLogger(mongoose);
-For Express.js HTTP requests and MongoDB calls can be easu
+devmetrics.enableHttpLogger(app); // Express.js HTTP requests
+devmetrics.enableMongooseLogger(mongoose); // MongoDB calls instrumentation
+```
 
 ####Stay in touch
 
