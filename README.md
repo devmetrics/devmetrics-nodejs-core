@@ -3,7 +3,7 @@ NodeJS lib to instrument application for logs, metrics and usage events in a con
 
 Events are sent to a logstash over UDP. Use your logstash instance or the devmetrics.io shared ELK (elasticsearch, logstash, kibana) instance.
 
-Browse data in the Kibana or native interface at http://www.devmetrics.io/logs
+Browse data in the Kibana, Grafana or native interface at http://www.devmetrics.io/logs
 
 ####The idea: logs + metrics in one request
 
