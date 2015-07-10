@@ -15,8 +15,10 @@ Metrics or logs? Right tool, right job.
 
 Our lib api design relies on several principles:
 1. Metrics and logs go together, we provide a single api to write both logs and metrics. For each event the API produces metrics with aggregated values and log entry with event details.
+
 2. For high volume applications the log entries can be sampled. The combined log and metrics approach allows to preserve accurate aggregated information in metrics while significantly reducing diagnostic log volume. 
-3. Tracking user acivity is a key requirement for moden apps. We provide `userEvent` as first class citizen in the libary to simplify user activity tracking. In addition to userEvent we also provide `appEvent` to track structured information about application levels events such as start, stop, etc.
+
+3. Tracking user acivity is a key requirement for modern apps. We provide `userEvent` as first class citizen in the libary to simplify user activity tracking. In addition to userEvent we also provide `appEvent` to track structured information about application levels events such as start, stop, etc.
 
 Checkout chat with out development team for comments and questions: https://gitter.im/devmetrics/dev#
 
