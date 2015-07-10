@@ -14,6 +14,7 @@ Metrics or logs? Right tool, right job.
 - **Logs** are for a detailed drilldown. View specific user actions or debug code behaviour.
 
 Our lib api design relies on several principles:
+
 1. Metrics and logs go together, we provide a single api to write both logs and metrics. For each event the API produces metrics with aggregated values and log entry with event details.
 
 2. For high volume applications the log entries can be sampled. The combined log and metrics approach allows to preserve accurate aggregated information in metrics while significantly reducing diagnostic log volume. 
