@@ -14,9 +14,9 @@ Metrics or logs? Right tool, right job.
 - **Logs** are for a detailed drilldown. View specific user actions or debug code behaviour.
 
 Our lib api design relies on several principles:
-1. Metrics and logs go together, we provide a single api to write both logs and metrics. If you write logs you always need a metric for this event.
-2. If you write metrics, you often need a log with more details for this event. It's often called sampling and used for drilldown and debug. We provide options to control sampling rate.
-3. App events and user events are different types of data. It answers different questions for different people. For this reason at lib level we provide two separate api methods: `userEvent(...)` and `appEvent(...)`
+1. Metrics and logs go together, we provide a single api to write both logs and metrics. For each event the API produces metrics with aggregated values and log entry with event details. 
+2. For high volume applications the log entries can be sampled. The combined log and metrics approach allows to preserve accurate aggregated information in metrics while significantly reducing diagnostic log volume. 
+3. Tracking user acivity is a key requirement for moden apps. We provide `userEvent` as first class citizen in the libary to simplify user activity tracking. In addition to userEvent we also provide `appEvent` to track structured information about application levels events such as start, stop, etc.
 
 Checkout chat with out development team for comments and questions: https://gitter.im/devmetrics/dev#
 
