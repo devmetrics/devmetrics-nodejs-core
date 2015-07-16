@@ -107,6 +107,14 @@ devmetrics.appEvent('web-request', ['index-page', 'US_region']);
 
 >  Almost the same API as for UserEvent, but userEvent is for business metrics and appEvent is for application and system metrics. Let's differentiate this data starting from the collect layer.
 
+####Code performance measurement
+
+To measure a specific function execution time, you can wrap it with the devmetrics function wrapper. This enables you to see how often your function is called and how many milliseconds it takes to execute.
+``` js
+var myProbablySlowFunc = function () {...};
+myProbablySlowFunc = devmetrics.measureTimeWrap(myProbablySlowFunc, 'SomeNameForDashboard');
+```
+
 ####Out of the box instrumentation, Application Performance Monitoring
 
 For MEAN stack we've prepared easy-to-go methods for APM instrumentation:
