@@ -31,6 +31,7 @@
   "dependencies": {
     "winston": "latest",
     "winston-logstash-udp": "latest",
+    "morgan": "latest",
     "extend": "latest"
   }
 }
