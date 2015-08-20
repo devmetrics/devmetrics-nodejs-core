@@ -1,27 +1,11 @@
 ### devmetrics-nodejs-core
 NodeJS lib to instrument application for logs, metrics and usage events in a consistent way.
 
-Events are sent to a logstash over UDP. Use your logstash instance or the devmetrics.io shared ELK (elasticsearch, logstash, kibana) instance.
+Library supports nice stdout formatting and log levels.
 
-Browse data in the Kibana, Grafana or native interface at http://www.devmetrics.io/logs
+Events are also sent to a logstash over UDP. Use your logstash instance or the devmetrics.io shared ELK (elasticsearch, logstash, kibana) instance.
 
-####The idea: logs + metrics in one request
-
-There are a lot of questions we need to answer about our app every day: business metrics for a product, application metrics for developers, system metrics for devops.
-
-Metrics or logs? Right tool, right job.
-- **Metrics** are to provide aggregated information generally visualized as graphs.
-- **Logs** are for a detailed drilldown. View specific user actions or debug code behaviour.
-
-Our lib api design relies on several principles:
-
-1. Metrics and logs go together, we provide a single api to write both logs and metrics. For each event the API produces metrics with aggregated values and log entry with event details.
-
-2. For high volume applications the log entries can be sampled. The combined log and metrics approach allows to preserve accurate aggregated information in metrics while significantly reducing diagnostic log volume. 
-
-3. Tracking user acivity is a key requirement for modern apps. We provide `userEvent` as first class citizen in the libary to simplify user activity tracking. In addition to userEvent we also provide `appEvent` to track structured information about application levels events such as start, stop, etc.
-
-Checkout chat with out development team for comments and questions: https://gitter.im/devmetrics/dev#
+Browse data in the Kibana, Grafana or native interface at http://www.devmetrics.io/logslib
 
 ####Installation
 
@@ -31,10 +15,11 @@ Checkout chat with out development team for comments and questions: https://gitt
 
 ####Library init
 
-> Default way, sends data to devmetrics.io shared cluster (1M events/month for free):
+> Default way, nice stdout logs and free devmetrics.io shared cluster:
 
 ``` js
-var devmetrics = require('devmetrics-core')({'app_id': 'my-private-id'})
+var logger = require('devmetrics-core')();
+logger.info('hello world');
 ```
 
 > Advanced init (for example, to send data to your private instance):
@@ -122,6 +107,24 @@ For MEAN stack we've prepared easy-to-go methods for APM instrumentation:
 devmetrics.enableHttpLogger(app); // Express.js HTTP requests
 devmetrics.enableMongooseLogger(mongoose); // MongoDB calls instrumentation
 ```
+
+####The idea: logs + metrics in one request
+
+There are a lot of questions we need to answer about our app every day: business metrics for a product, application metrics for developers, system metrics for devops.
+
+Metrics or logs? Right tool, right job.
+- **Metrics** are to provide aggregated information generally visualized as graphs.
+- **Logs** are for a detailed drilldown. View specific user actions or debug code behaviour.
+
+Our lib api design relies on several principles:
+
+1. Metrics and logs go together, we provide a single api to write both logs and metrics. For each event the API produces metrics with aggregated values and log entry with event details.
+
+2. For high volume applications the log entries can be sampled. The combined log and metrics approach allows to preserve accurate aggregated information in metrics while significantly reducing diagnostic log volume. 
+
+3. Tracking user acivity is a key requirement for modern apps. We provide `userEvent` as first class citizen in the libary to simplify user activity tracking. In addition to userEvent we also provide `appEvent` to track structured information about application levels events such as start, stop, etc.
+
+Checkout chat with out development team for comments and questions: https://gitter.im/devmetrics/dev#
 
 ####Stay in touch
 
