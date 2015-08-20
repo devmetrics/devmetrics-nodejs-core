@@ -1,6 +1,6 @@
 {
   "name": "devmetrics-core",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "description": "Node.js monitoring solution. Fully open source. Logs, metrics, alerts, dashboards.",
   "main": "lib/devmetrics-core",
   "scripts": {
